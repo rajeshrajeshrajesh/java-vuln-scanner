@@ -20,5 +20,5 @@ def index():
     return render_template('index.html', findings=findings)
 
 if __name__ == '__main__':
-    app.run(debug=True)
-app.run(host="0.0.0.0", port=10000, debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render sets PORT dynamically
+    app.run(host="0.0.0.0", port=port, debug=True)
